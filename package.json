@@ -1,0 +1,21 @@
+{
+  "name": "chat-relay-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Jacob \"Alca\" Foster",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.3",
+    "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/tmi.js": "^1.4.2"
+  }
+}
