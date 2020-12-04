@@ -1,60 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Alca Chat</title>
-	<script src="https://unpkg.com/socket.io@3.0.3/client-dist/socket.io.min.js"></script>
-	<script src="https://alca.sfo2.cdn.digitaloceanspaces.com/static/f/alcasoverlays/v1/vendor/vue.v2.min.js"></script>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-	<style>
-		/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
-		[v-cloak] > * { display:none; }
-		body {
-			background: hsl(0, 0%, 8%);
-			color: hsl(0, 0%, 100%);
-			font-family: 'Roboto', sans-serif;
-		}
-		.message-line {
-			font-size: 0;
-		}
-		.message-line > div {
-			display: inline;
-			font-size: 16px;
-		}
-		.message {
-			flex-grow: 1;
-		}
-		.message-part {
-			display: inline;
-		}
-		.message-part[data-part="emote"] {
-			display: inline-block;
-			width: 28px;
-			height: 28px;
-			background-repeat: no-repeat;
-			background-size: contain;
-			vertical-align: middle;
-		}
-	</style>
-</head>
+<head></head>
 <body>
-<div id="app" v-cloak>
-	<div class="message-line" v-for="msg in messages" :key="msg.tags.id">
-		<div class="user" :style="{ color: msg.tags.color || 'white' }">{{ msg.tags['display-name'] || msg.tags.username }}</div>
-		<div>: </div>
-		<div class="message">
-			<div
-				class="message-part"
-				v-for="part in msg.parts"
-				:data-part="part.type"
-				:style="{ backgroundImage: part.url }"
-				:title="part.isEmote ? part.name : ''"
-			>
-				<span v-if="!part.isEmote">{{ part.content }}</span>
-			</div>
-		</div>
-	</div>
-</div>
-<script src="js/chat.js"></script>
+<div id="app" v-cloak></div>
+<script src="js/index.js"></script>
 </body>
 </html>

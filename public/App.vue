@@ -1,7 +1,29 @@
-const app = new Vue({
-	el: '#app',
+<template lang="pug">
+div
+	.message-line(v-for="msg in messages" :key="msg.tags.id")
+		.user(
+			:style="{ color: msg.tags.color || 'white' }"
+		) {{ msg.tags['display-name'] || msg.tags.username }}
+		div :
+		.message
+			div(
+				class="message-part"
+				v-for="part in msg.parts"
+				:data-part="part.type"
+				:style="{ backgroundImage: part.url }"
+				:title="part.isEmote ? part.name : ''"
+			)
+				span(v-if="!part.isEmote") {{ part.content }}
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+import io from 'socket.io-client';
+
+export default Vue.extend({
 	mounted() {
-		const socket = io();
+		const socket = io({ transports: [ 'websocket' ] });
+		// socket.set('transports', [ 'websocket' ]);
 		socket.on('message', e => this.onMessage(e));
 		this.getHistory();
 	},
@@ -76,3 +98,36 @@ const app = new Vue({
 		}
 	}
 });
+</script>
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+	background: hsl(0, 0%, 8%);
+	color: hsl(0, 0%, 100%);
+	font-family: 'Roboto', sans-serif;
+}
+.message-line {
+	font-size: 0;
+
+	& > div {
+		display: inline;
+		font-size: 16px;
+	}
+}
+.message {
+	flex-grow: 1;
+}
+.message-part {
+	display: inline;
+
+	&[data-part="emote"] {
+		display: inline-block;
+		width: 28px;
+		height: 28px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		vertical-align: middle;
+	}
+}
+</style>

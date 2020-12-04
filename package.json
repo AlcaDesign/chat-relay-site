@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r dotenv/config server.js"
+    "start": "node -r dotenv/config server.js",
+    "build": "parcel build public/index.html",
+    "watch": "parcel watch public/index.html"
   },
   "keywords": [],
   "author": "Jacob \"Alca\" Foster",
@@ -13,10 +15,25 @@
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^3.0.3",
-    "tmi.js": "^1.5.0"
+    "socket.io-client": "^3.0.3",
+    "tmi.js": "^1.5.0",
+    "vue": "^2.6.12",
+    "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
     "@types/tmi.js": "^1.4.2",
-    "dotenv": "^8.2.0"
-  }
+    "@vue/component-compiler-utils": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "parcel": "^1.12.4",
+    "pug": "^3.0.0",
+    "sass": "^1.29.0",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ]
 }

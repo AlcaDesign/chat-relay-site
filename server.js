@@ -13,7 +13,7 @@ app.disable('x-powered-by');
 
 const history = [];
 
-app.use(express.static('public', { extensions: [ 'html' ] }));
+app.use(express.static('dist', { extensions: [ 'html' ] }));
 
 app.get('/api/history', (req, res) => {
 	res.send({ history });
