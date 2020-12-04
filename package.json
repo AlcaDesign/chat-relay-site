@@ -18,7 +18,8 @@
     "socket.io-client": "^3.0.3",
     "tmi.js": "^1.5.0",
     "vue": "^2.6.12",
-    "vue-hot-reload-api": "^2.3.4"
+    "vue-hot-reload-api": "^2.3.4",
+    "ws": "^7.4.0"
   },
   "devDependencies": {
     "@types/tmi.js": "^1.4.2",

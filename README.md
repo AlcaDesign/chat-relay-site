@@ -10,7 +10,6 @@ Contributions are welcome
 
 # TODO
 
-- Badges
 - Cheermotes
 - Local sign-in (implicit token)
 - Settings (localstorage)
