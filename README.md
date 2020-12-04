@@ -13,4 +13,11 @@ Contributions are welcome
 - Badges
 - Cheermotes
 - Local sign-in (implicit token)
+- Settings (localstorage)
+- Display timestamps
+- Clear history by timestamp not index
+- Other events
+	- Subscriptions
+		- New, resub, gift subs
+	- Redemptions
 - Write more of the TODO
