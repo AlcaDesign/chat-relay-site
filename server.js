@@ -1,7 +1,7 @@
 const tmi = require('tmi.js');
 const express = require('express');
 const app = express();
-const server = app.listen(8050, () => {
+const server = app.listen(process.env.PORT, () => {
 	const addr = server.address();
 	if(typeof addr !== 'string') {
 		console.log(`Listening http://localhost:${addr.port}`);
