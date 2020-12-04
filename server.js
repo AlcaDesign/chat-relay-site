@@ -27,13 +27,16 @@ const client = new tmi.Client({
 
 client.connect();
 
-client.on('message', (channel, tags, message, self) => {
+function handleMessage(channel, tags, message, self) {
 	const msg = { channel, tags, message, self };
 	io.emit('message', msg);
 	history.push(msg);
 	if(history.length > 10) {
 		history.shift();
 	}
-});
+}
+
+client.on('message', handleMessage);
+client.on('cheer', handleMessage);
 
 io.on('connection', () => console.log('Connected'));
