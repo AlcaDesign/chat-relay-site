@@ -16,7 +16,11 @@ Contributions are welcome
 - Display timestamps
 - Clear history by timestamp not index
 - Other events
+	- Moderation
 	- Subscriptions
 		- New, resub, gift subs
 	- Redemptions
+		- `msg-id: "highlighted-message"`
+		- `msg-id: "skip-subs-mode-message"`
+		- `custom-reward-id: "f71d9c13-5cdc-4baa-9d5b-7d9c4b0c1696"`
 - Write more of the TODO
