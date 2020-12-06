@@ -39,7 +39,7 @@ export default Vue.extend({
 		console.log('Loaded badges');
 		console.log('Loading BTTV/FFZ emotes');
 		await Promise.all([
-			this.getBTTVEmotes()
+			this.getBTTVEmotes(),
 			this.getBTTVEmotes('7676884'),
 			this.getFFZEmotes(),
 			this.getFFZEmotes('alca')
